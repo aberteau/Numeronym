@@ -1,6 +1,4 @@
-﻿using System;
-
-namespace Core
+﻿namespace Numeronym.Core
 {
     public class Class1
     {
