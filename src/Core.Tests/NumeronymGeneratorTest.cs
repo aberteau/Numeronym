@@ -13,5 +13,19 @@ namespace Numeronym.Core.Tests
             String actual = NumeronymGenerator.Generate(toConvert);
             Assert.Equal(expected, actual);
         }
+
+        [Fact]
+        public void Generate_Null_When_Null()
+        {
+            String actual = NumeronymGenerator.Generate(null);
+            Assert.Null(actual);
+        }
+
+        [Fact]
+        public void Generate_Null_When_Whitespace()
+        {
+            String actual = NumeronymGenerator.Generate("  ");
+            Assert.Null(actual);
+        }
     }
 }

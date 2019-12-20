@@ -6,6 +6,9 @@ namespace Numeronym.Core
     {
         public static string Generate(string toConvert)
         {
+            if (string.IsNullOrWhiteSpace(toConvert))
+                return null;
+
             char[] charArray = toConvert.ToCharArray();
             char firstChar = charArray.FirstOrDefault();
             char lastChar = charArray.LastOrDefault();
