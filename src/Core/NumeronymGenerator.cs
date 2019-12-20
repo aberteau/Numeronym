@@ -9,12 +9,17 @@ namespace Numeronym.Core
             if (string.IsNullOrWhiteSpace(toConvert))
                 return null;
 
+            int charCount = toConvert.Length;
+
+            if (charCount <= 3)
+                return toConvert;
+
             char[] charArray = toConvert.ToCharArray();
             char firstChar = charArray.FirstOrDefault();
             char lastChar = charArray.LastOrDefault();
 
-            int numberOfOmittedLetters = toConvert.Length - 2;
-            string numeronym = $"{firstChar}{numberOfOmittedLetters}{lastChar}";
+            int omittedCharCount = charCount - 2;
+            string numeronym = $"{firstChar}{omittedCharCount}{lastChar}";
             return numeronym;
         }
     }

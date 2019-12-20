@@ -27,5 +27,15 @@ namespace Numeronym.Core.Tests
             String actual = NumeronymGenerator.Generate("  ");
             Assert.Null(actual);
         }
+
+        [Theory]
+        [InlineData("a", "a")]
+        [InlineData("aa", "aa")]
+        [InlineData("aaa", "aaa")]
+        public void Generate_Same_When_Length_Less_Than_3(String toConvert, string expected)
+        {
+            String actual = NumeronymGenerator.Generate(toConvert);
+            Assert.Equal(expected, actual);
+        }
     }
 }
